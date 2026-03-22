@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Maryam's Lesson Companion",
-    "slug": "lesson-companion",
+    "name": "حصتي",
+    "slug": "hissati",
     "version": "2.0.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
@@ -53,18 +53,13 @@
           ]
         }
       ],
-      [
-        "expo-av",
-        {
-          "microphonePermission": false
-        }
-      ],
+      "expo-audio",
       "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true
     },
-    "scheme": "lessoncompanion",
+    "scheme": "hissati",
     "extra": {
       "router": {
         "origin": false

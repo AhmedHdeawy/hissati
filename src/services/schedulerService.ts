@@ -152,7 +152,7 @@ export async function scheduleAllReminders(subjects: Subject[]): Promise<void> {
               sound: PHASE_SOUNDS[info.phase],
               channelId: PHASE_CHANNELS[info.phase],
             },
-            trigger: { date: triggerDate },
+            trigger: { type: 'date', date: triggerDate },
           });
         }
       }

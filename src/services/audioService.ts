@@ -1,8 +1,8 @@
-import { Audio } from 'expo-av';
+import { createAudioPlayer, setAudioModeAsync } from 'expo-audio';
 import { Asset } from 'expo-asset';
 import type { AudioSource } from '../types';
 
-let currentSound: Audio.Sound | null = null;
+let currentPlayer: ReturnType<typeof createAudioPlayer> | null = null;
 
 // Bundled default audio files
 const BUNDLED_AUDIO = {
@@ -35,11 +35,10 @@ export async function resolveAudioUri(
  * Configure audio session for playback (call once at app start).
  */
 export async function configureAudio(): Promise<void> {
-  await Audio.setAudioModeAsync({
-    allowsRecordingIOS: false,
-    playsInSilentModeIOS: true,
-    staysActiveInBackground: true,
-    shouldDuckAndroid: true,
+  await setAudioModeAsync({
+    playsInSilentMode: true,
+    shouldPlayInBackground: true,
+    interruptionMode: 'duckOthers',
   });
 }
 
@@ -51,29 +50,26 @@ export async function playAudio(uri: string | null): Promise<void> {
   if (!uri) return;
 
   try {
-    // Stop existing sound
-    if (currentSound) {
-      await currentSound.stopAsync();
-      await currentSound.unloadAsync();
-      currentSound = null;
+    // Stop existing player
+    if (currentPlayer) {
+      currentPlayer.remove();
+      currentPlayer = null;
     }
 
-    const { sound } = await Audio.Sound.createAsync(
-      { uri },
-      { shouldPlay: true, volume: 1.0 }
-    );
-
-    currentSound = sound;
+    const player = createAudioPlayer(uri);
+    currentPlayer = player;
 
     // Auto-cleanup when finished
-    sound.setOnPlaybackStatusUpdate((status) => {
-      if (status.isLoaded && status.didJustFinish) {
-        sound.unloadAsync().catch(() => {});
-        if (currentSound === sound) {
-          currentSound = null;
+    player.addListener('playbackStatusUpdate', (status) => {
+      if (status.didJustFinish) {
+        player.remove();
+        if (currentPlayer === player) {
+          currentPlayer = null;
         }
       }
     });
+
+    player.play();
   } catch (error) {
     console.warn('[AudioService] Failed to play audio:', uri, error);
   }
@@ -83,13 +79,12 @@ export async function playAudio(uri: string | null): Promise<void> {
  * Stop current playback.
  */
 export async function stopAudio(): Promise<void> {
-  if (currentSound) {
+  if (currentPlayer) {
     try {
-      await currentSound.stopAsync();
-      await currentSound.unloadAsync();
+      currentPlayer.remove();
     } catch {
       // ignore
     }
-    currentSound = null;
+    currentPlayer = null;
   }
 }
