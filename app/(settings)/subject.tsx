@@ -259,7 +259,7 @@ export default function SubjectEditorScreen() {
                   showsHorizontalScrollIndicator={false}
                   contentContainerStyle={styles.dayChips}
                 >
-                  {DAYS_OF_WEEK.map(({ key, label }) => (
+                  {[...DAYS_OF_WEEK].reverse().map(({ key, label }) => (
                     <TouchableOpacity
                       key={key}
                       style={[
@@ -449,7 +449,7 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   cardHeader: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -471,7 +471,7 @@ const styles = StyleSheet.create({
   },
   shortInput: {
     width: 100,
-    alignSelf: 'flex-end',
+    alignSelf: 'flex-start',
     textAlign: 'center',
     writingDirection: 'ltr',
   },
@@ -480,7 +480,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   iconGrid: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     flexWrap: 'wrap',
     gap: 8,
   },
@@ -533,7 +533,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   timeRow: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     gap: 12,
   },
@@ -558,7 +558,7 @@ const styles = StyleSheet.create({
   },
   // Inline time grid
   timeGrid: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     flexWrap: 'wrap',
     gap: 6,
     backgroundColor: '#F8FAFC',
@@ -587,7 +587,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   audioRow: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: 10,

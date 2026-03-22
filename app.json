@@ -34,7 +34,8 @@
       "permissions": [
         "RECEIVE_BOOT_COMPLETED",
         "VIBRATE",
-        "SCHEDULE_EXACT_ALARM"
+        "SCHEDULE_EXACT_ALARM",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
       ]
     },
     "plugins": [
@@ -47,7 +48,8 @@
           "sounds": [
             "./assets/sounds/notification_t60.mp3",
             "./assets/sounds/notification_t30.mp3",
-            "./assets/sounds/notification_t5.mp3"
+            "./assets/sounds/notification_t5.mp3",
+            "./assets/sounds/notification_success.mp3"
           ]
         }
       ],
@@ -62,6 +64,14 @@
     "experiments": {
       "typedRoutes": true
     },
-    "scheme": "lessoncompanion"
+    "scheme": "lessoncompanion",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "1c1dcece-0367-4113-aba0-bfcee53aa3c7"
+      }
+    }
   }
 }

@@ -6,8 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Animated,
-  KeyboardAvoidingView,
-  Platform,
+  ScrollView,
 } from 'react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -62,9 +61,10 @@ export default function MathGateScreen() {
           <View style={{ width: 44 }} />
         </View>
 
-        <KeyboardAvoidingView
-          style={styles.content}
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        <ScrollView
+          contentContainerStyle={styles.content}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
         >
           <View style={styles.lockCircle}>
             <MaterialCommunityIcons name="lock" size={48} color="#FFFFFF" />
@@ -104,7 +104,7 @@ export default function MathGateScreen() {
             <MaterialCommunityIcons name="arrow-left-circle" size={22} color={COLORS.primary} />
             <Text style={styles.submitText}>دخول</Text>
           </TouchableOpacity>
-        </KeyboardAvoidingView>
+        </ScrollView>
       </SafeAreaView>
     </AnimatedBackground>
   );
@@ -135,10 +135,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   content: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 40,
+    paddingVertical: 40,
     gap: 16,
   },
   lockCircle: {

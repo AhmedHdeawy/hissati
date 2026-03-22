@@ -68,13 +68,12 @@ export default function DashboardScreen() {
 
       // Open meeting URL
       if (subject.meeting_url) {
-        const canOpen = await Linking.canOpenURL(subject.meeting_url);
-        if (canOpen) {
+        try {
           await Linking.openURL(subject.meeting_url);
-        } else {
+        } catch {
           Alert.alert(
-            'تعذّر فتح الرابط',
-            `يرجى تثبيت Zoom أو Google Meet للانضمام: ${subject.meeting_url}`
+            'تعذر فتح الرابط',
+            'يرجى تثبيت Zoom او Google Meet للانضمام'
           );
         }
       }

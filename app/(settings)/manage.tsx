@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   cardHeader: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.7)',
   },
   subjectRow: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     gap: 12,
     paddingVertical: 14,
