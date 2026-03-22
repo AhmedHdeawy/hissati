@@ -1,0 +1,7 @@
+** BUILD FAILED **
+
+
+The following build commands failed:
+	ScanDependencies /Users/ahmedhdeawy/Library/Developer/Xcode/DerivedData/MaryamsLessonCompanion-cxrxcsbfvskaddayjfcstzmalbnx/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/React-RCTAppDelegate.build/Objects-normal/arm64/React-RCTAppDelegate-dummy.o /Users/ahmedhdeawy/dev/ideas/lesson-companion/ios/Pods/Target\ Support\ Files/React-RCTAppDelegate/React-RCTAppDelegate-dummy.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'React-RCTAppDelegate' from project 'Pods')
+	Building workspace MaryamsLessonCompanion with scheme MaryamsLessonCompanion and configuration Debug
+(2 failures)

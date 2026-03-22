@@ -1,0 +1,43 @@
+{
+  "parental_control": {
+    "notify_parent": true,
+    "webhook_url": "https://webhook.site/your-unique-id-here"
+  },
+  "subjects": [
+    {
+      "id": "eng_01",
+      "title": "English Class",
+      "duration_minutes": 45,
+      "schedule": [
+        { "day": "Monday", "time": "21:00" },
+        { "day": "Wednesday", "time": "21:00" }
+      ],
+      "assets": {
+        "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f4da.png",
+        "audio_60": "https://www.soundjay.com/button/sounds/beep-01a.mp3",
+        "audio_30": "https://www.soundjay.com/button/sounds/beep-07.mp3",
+        "audio_5": "https://www.soundjay.com/button/sounds/beep-10.mp3",
+        "audio_success": "https://www.soundjay.com/button/sounds/beep-21.mp3"
+      },
+      "meeting_url": "https://zoom.us/j/12345678"
+    },
+    {
+      "id": "quran_01",
+      "title": "Quran",
+      "duration_minutes": 30,
+      "schedule": [
+        { "day": "Tuesday", "time": "18:00" },
+        { "day": "Thursday", "time": "18:00" },
+        { "day": "Saturday", "time": "10:00" }
+      ],
+      "assets": {
+        "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f54b.png",
+        "audio_60": "https://www.soundjay.com/button/sounds/beep-01a.mp3",
+        "audio_30": "https://www.soundjay.com/button/sounds/beep-07.mp3",
+        "audio_5": "https://www.soundjay.com/button/sounds/beep-10.mp3",
+        "audio_success": "https://www.soundjay.com/button/sounds/beep-21.mp3"
+      },
+      "meeting_url": "https://meet.google.com/abc-defg-hij"
+    }
+  ]
+}

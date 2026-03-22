@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background circle gradient: purple to pink -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6C63FF"/>
+      <stop offset="100%" stop-color="#FF6584"/>
+    </radialGradient>
+    <!-- Left page gradient -->
+    <linearGradient id="leftPageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <!-- Right page gradient -->
+    <linearGradient id="rightPageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9A8D4"/>
+      <stop offset="100%" stop-color="#FF6584"/>
+    </linearGradient>
+    <!-- Book cover gradient -->
+    <linearGradient id="coverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="100%" stop-color="#6C63FF"/>
+    </linearGradient>
+    <!-- Star glow filter -->
+    <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Soft shadow for book -->
+    <filter id="bookShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#3B0764" flood-opacity="0.35"/>
+    </filter>
+    <!-- Star inner glow -->
+    <radialGradient id="starGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#FFAA00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded background circle -->
+  <rect width="1024" height="1024" rx="220" ry="220" fill="url(#bgGrad)"/>
+
+  <!-- Subtle inner vignette -->
+  <rect width="1024" height="1024" rx="220" ry="220" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.15"/>
+
+  <!-- ── BOOK ─────────────────────────────────────────────── -->
+  <g filter="url(#bookShadow)">
+
+    <!-- Book body: left cover -->
+    <path d="M180,430 Q180,380 230,370 L512,360 L512,740 L230,750 Q180,750 180,700 Z"
+          fill="url(#coverGrad)" rx="18"/>
+
+    <!-- Book body: right cover -->
+    <path d="M844,430 Q844,380 794,370 L512,360 L512,740 L794,750 Q844,750 844,700 Z"
+          fill="#5B21B6"/>
+
+    <!-- Left page -->
+    <path d="M512,375 L260,385 Q220,390 218,430 L218,695 Q220,730 260,732 L512,724 Z"
+          fill="url(#leftPageGrad)"/>
+
+    <!-- Right page -->
+    <path d="M512,375 L764,385 Q804,390 806,430 L806,695 Q804,730 764,732 L512,724 Z"
+          fill="url(#rightPageGrad)"/>
+
+    <!-- Page center spine highlight -->
+    <rect x="506" y="360" width="12" height="376" rx="6" fill="#4C1D95" opacity="0.6"/>
+
+    <!-- Left page subtle lines -->
+    <line x1="270" y1="470" x2="490" y2="468" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+    <line x1="270" y1="510" x2="490" y2="508" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+    <line x1="270" y1="550" x2="490" y2="548" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+    <line x1="270" y1="590" x2="490" y2="588" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+    <line x1="270" y1="630" x2="490" y2="628" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+    <line x1="270" y1="670" x2="490" y2="668" stroke="#7C3AED" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+
+    <!-- Right page subtle lines -->
+    <line x1="534" y1="470" x2="754" y2="468" stroke="#BE185D" stroke-width="4" stroke-linecap="round" opacity="0.25"/>
+    <line x1="534" y1="510" x2="754" y2="508" stroke="#BE185D" stroke-width="4" stroke-linecap="round" opacity="0.25"/>
+    <line x1="534" y1="550" x2="754" y2="548" stroke="#BE185D" stroke-width="4" stroke-linecap="round" opacity="0.25"/>
+    <line x1="534" y1="590" x2="754" y2="588" stroke="#BE185D" stroke-width="4" stroke-linecap="round" opacity="0.25"/>
+    <line x1="534" y1="630" x2="754" y2="628" stroke="#BE185D" stroke-width="4" stroke-linecap="round" opacity="0.25"/>
+    <line x1="534" y1="670" x2="754" y2="668" stroke="#BE185D" stroke-width="4" stroke-linecap="round" opacity="0.25"/>
+
+    <!-- ── Golden crescent moon on left page ── -->
+    <g transform="translate(355, 555)">
+      <!-- Outer crescent -->
+      <circle cx="0" cy="0" r="68" fill="#FFAA00"/>
+      <!-- Inner circle to form crescent -->
+      <circle cx="28" cy="-18" r="58" fill="url(#leftPageGrad)"/>
+      <!-- Small star beside crescent -->
+      <polygon points="82,0 88,16 105,16 92,26 97,42 82,32 67,42 72,26 59,16 76,16"
+               fill="#FFAA00" transform="scale(0.55) translate(60,-20)"/>
+    </g>
+
+    <!-- ── ABC letters on right page ── -->
+    <!-- A -->
+    <text x="574" y="548" font-family="Arial Rounded MT Bold, Arial, sans-serif"
+          font-size="92" font-weight="900" fill="#FFFFFF" opacity="0.95"
+          text-anchor="middle" letter-spacing="-2">A</text>
+    <!-- B -->
+    <text x="660" y="620" font-family="Arial Rounded MT Bold, Arial, sans-serif"
+          font-size="76" font-weight="900" fill="#FFFFFF" opacity="0.8"
+          text-anchor="middle">B</text>
+    <!-- C -->
+    <text x="590" y="688" font-family="Arial Rounded MT Bold, Arial, sans-serif"
+          font-size="64" font-weight="900" fill="#FFFFFF" opacity="0.65"
+          text-anchor="middle">C</text>
+
+    <!-- Book bottom edge / depth -->
+    <path d="M218,700 Q220,748 260,752 L764,752 Q804,748 806,700 L806,720 Q804,762 764,766 L260,766 Q220,762 218,720 Z"
+          fill="#3B0764" opacity="0.5"/>
+  </g>
+
+  <!-- ── GLOWING STAR above book ── -->
+  <g filter="url(#starGlow)" transform="translate(512, 255)">
+    <!-- Outer glow halo -->
+    <circle cx="0" cy="0" r="72" fill="#FFAA00" opacity="0.18"/>
+    <circle cx="0" cy="0" r="50" fill="#FFE066" opacity="0.22"/>
+    <!-- 8-point star -->
+    <polygon points="
+      0,-80  14,-28  62,-62  28,-14
+      80,0   28,14   62,62   14,28
+      0,80  -14,28  -62,62  -28,14
+      -80,0 -28,-14 -62,-62 -14,-28"
+      fill="url(#starGrad)"/>
+    <!-- Star center highlight -->
+    <circle cx="0" cy="0" r="16" fill="#FFFFFF" opacity="0.9"/>
+    <!-- Sparkle rays -->
+    <line x1="0" y1="-95" x2="0" y2="-110" stroke="#FFE066" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="0" y1="95" x2="0" y2="110" stroke="#FFE066" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="-95" y1="0" x2="-110" y2="0" stroke="#FFE066" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="95" y1="0" x2="110" y2="0" stroke="#FFE066" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="-67" y1="-67" x2="-78" y2="-78" stroke="#FFE066" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="67" y1="-67" x2="78" y2="-78" stroke="#FFE066" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="-67" y1="67" x2="-78" y2="78" stroke="#FFE066" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="67" y1="67" x2="78" y2="78" stroke="#FFE066" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <!-- ── Scattered tiny sparkles on background ── -->
+  <!-- Top-left -->
+  <circle cx="140" cy="180" r="6" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="165" cy="155" r="3" fill="#FFE066" opacity="0.6"/>
+  <!-- Top-right -->
+  <circle cx="880" cy="200" r="5" fill="#FFFFFF" opacity="0.45"/>
+  <circle cx="860" cy="225" r="3" fill="#FFE066" opacity="0.55"/>
+  <!-- Bottom-left -->
+  <circle cx="155" cy="840" r="5" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="180" cy="870" r="3" fill="#FFE066" opacity="0.5"/>
+  <!-- Bottom-right -->
+  <circle cx="870" cy="830" r="6" fill="#FFFFFF" opacity="0.45"/>
+  <circle cx="845" cy="858" r="3" fill="#FFE066" opacity="0.55"/>
+  <!-- Mid decorative dots -->
+  <circle cx="200" cy="512" r="4" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="824" cy="512" r="4" fill="#FFFFFF" opacity="0.3"/>
+
+</svg>

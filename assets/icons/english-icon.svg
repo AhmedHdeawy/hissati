@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Light blue background -->
+    <radialGradient id="bgCircle" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </radialGradient>
+    <!-- Blue book gradient (bottom book) -->
+    <linearGradient id="blueBook" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <!-- Yellow book gradient (middle book) -->
+    <linearGradient id="yellowBook" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#FFAA00"/>
+    </linearGradient>
+    <!-- Pink book gradient (top book) -->
+    <linearGradient id="pinkBook" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDA4AF"/>
+      <stop offset="100%" stop-color="#FF6584"/>
+    </linearGradient>
+    <!-- Page inner (lighter) -->
+    <linearGradient id="pageInner" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Star gradient -->
+    <radialGradient id="starFill" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#FFAA00"/>
+    </radialGradient>
+    <!-- Book shadow -->
+    <filter id="bookStackShadow" x="-10%" y="-5%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1E40AF" flood-opacity="0.25"/>
+    </filter>
+    <!-- Star glow -->
+    <filter id="topStarGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgCircle)"/>
+  <!-- Ring accent -->
+  <circle cx="256" cy="256" r="238" fill="none" stroke="#93C5FD" stroke-width="3" opacity="0.5"/>
+  <circle cx="256" cy="256" r="228" fill="none" stroke="#60A5FA" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- ── BOOK STACK ── -->
+  <g filter="url(#bookStackShadow)">
+
+    <!-- ===== BOTTOM BOOK (Blue) ===== -->
+    <g>
+      <!-- Main body -->
+      <rect x="118" y="330" width="276" height="88" rx="10" fill="url(#blueBook)"/>
+      <!-- Spine left edge -->
+      <rect x="118" y="330" width="20" height="88" rx="10" fill="#1D4ED8"/>
+      <rect x="126" y="330" width="6" height="88" rx="3" fill="#3B82F6" opacity="0.5"/>
+      <!-- Pages edge right (stacked page effect) -->
+      <rect x="386" y="334" width="8" height="80" rx="3" fill="#EFF6FF" opacity="0.7"/>
+      <rect x="391" y="337" width="4" height="74" rx="2" fill="#BFDBFE" opacity="0.5"/>
+      <!-- Cover highlight -->
+      <rect x="140" y="330" width="230" height="88" rx="6" fill="url(#pageInner)"/>
+      <!-- Horizontal rule lines on cover -->
+      <line x1="150" y1="358" x2="375" y2="358" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.35"/>
+      <line x1="150" y1="376" x2="375" y2="376" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/>
+      <line x1="150" y1="394" x2="375" y2="394" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.18"/>
+      <!-- Top edge depth -->
+      <rect x="118" y="330" width="276" height="8" rx="4" fill="#93C5FD" opacity="0.4"/>
+      <!-- Bottom shadow strip -->
+      <rect x="120" y="410" width="272" height="8" rx="4" fill="#1D4ED8" opacity="0.4"/>
+    </g>
+
+    <!-- ===== MIDDLE BOOK (Yellow) ===== -->
+    <g transform="translate(0, -4)">
+      <!-- Slight wider offset for stacking sense -->
+      <!-- Main body -->
+      <rect x="126" y="248" width="264" height="90" rx="10" fill="url(#yellowBook)"/>
+      <!-- Spine left -->
+      <rect x="126" y="248" width="20" height="90" rx="10" fill="#D97706"/>
+      <rect x="134" y="248" width="6" height="90" rx="3" fill="#FCD34D" opacity="0.5"/>
+      <!-- Pages edge right -->
+      <rect x="378" y="252" width="8" height="82" rx="3" fill="#FFFBEB" opacity="0.7"/>
+      <rect x="383" y="255" width="4" height="76" rx="2" fill="#FDE68A" opacity="0.5"/>
+      <!-- Cover highlight -->
+      <rect x="148" y="248" width="222" height="90" rx="6" fill="url(#pageInner)"/>
+      <!-- Horizontal rules -->
+      <line x1="158" y1="276" x2="368" y2="276" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+      <line x1="158" y1="294" x2="368" y2="294" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.38"/>
+      <line x1="158" y1="312" x2="368" y2="312" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.26"/>
+      <!-- Top edge depth -->
+      <rect x="126" y="248" width="264" height="8" rx="4" fill="#FDE68A" opacity="0.5"/>
+      <!-- Bottom shadow -->
+      <rect x="128" y="330" width="260" height="8" rx="4" fill="#B45309" opacity="0.3"/>
+    </g>
+
+    <!-- ===== TOP BOOK (Pink) ===== -->
+    <g transform="translate(0, -8)">
+      <!-- Main body -->
+      <rect x="136" y="166" width="248" height="90" rx="10" fill="url(#pinkBook)"/>
+      <!-- Spine left -->
+      <rect x="136" y="166" width="20" height="90" rx="10" fill="#E11D48"/>
+      <rect x="144" y="166" width="6" height="90" rx="3" fill="#FDA4AF" opacity="0.55"/>
+      <!-- Pages edge right -->
+      <rect x="372" y="170" width="8" height="82" rx="3" fill="#FFF1F2" opacity="0.7"/>
+      <rect x="377" y="173" width="4" height="76" rx="2" fill="#FECDD3" opacity="0.5"/>
+      <!-- Cover highlight -->
+      <rect x="158" y="166" width="206" height="90" rx="6" fill="url(#pageInner)"/>
+      <!-- Horizontal rules -->
+      <line x1="168" y1="194" x2="360" y2="194" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+      <line x1="168" y1="212" x2="360" y2="212" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.38"/>
+      <line x1="168" y1="230" x2="360" y2="230" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.26"/>
+      <!-- Top edge depth -->
+      <rect x="136" y="166" width="248" height="8" rx="4" fill="#FDA4AF" opacity="0.5"/>
+      <!-- Bottom shadow -->
+      <rect x="138" y="248" width="244" height="8" rx="4" fill="#9F1239" opacity="0.25"/>
+    </g>
+
+  </g>
+
+  <!-- ── TOP STAR ── -->
+  <g filter="url(#topStarGlow)" transform="translate(256, 130)">
+    <!-- Outer halo -->
+    <circle cx="0" cy="0" r="36" fill="#FFAA00" opacity="0.15"/>
+    <!-- 5-point star -->
+    <polygon points="
+      0,-38  8,-14  34,-14  14,5
+      22,30  0,16  -22,30  -14,5
+      -34,-14  -8,-14"
+      fill="url(#starFill)"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="7" fill="#FFFFFF" opacity="0.9"/>
+    <!-- Sparkle rays -->
+    <line x1="0" y1="-46" x2="0" y2="-56" stroke="#FFE066" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+    <line x1="44" y1="14" x2="52" y2="18" stroke="#FFE066" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <line x1="-44" y1="14" x2="-52" y2="18" stroke="#FFE066" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <line x1="27" y1="-38" x2="32" y2="-44" stroke="#FFE066" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+    <line x1="-27" y1="-38" x2="-32" y2="-44" stroke="#FFE066" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+  </g>
+
+  <!-- ── Small decorative stars around the scene ── -->
+  <!-- Left side -->
+  <g transform="translate(110, 210)">
+    <polygon points="0,-12 3,-4 11,-4 5,1 7,10 0,5 -7,10 -5,1 -11,-4 -3,-4"
+             fill="#60A5FA" opacity="0.7"/>
+  </g>
+  <!-- Right side -->
+  <g transform="translate(400, 310)">
+    <polygon points="0,-10 2,-4 9,-4 4,0 6,8 0,4 -6,8 -4,0 -9,-4 -2,-4"
+             fill="#FFAA00" opacity="0.65"/>
+  </g>
+  <!-- Bottom left -->
+  <g transform="translate(130, 440)">
+    <polygon points="0,-10 2,-4 9,-4 4,0 6,8 0,4 -6,8 -4,0 -9,-4 -2,-4"
+             fill="#FF6584" opacity="0.55"/>
+  </g>
+  <!-- Bottom right -->
+  <g transform="translate(386, 440)">
+    <polygon points="0,-12 3,-4 11,-4 5,1 7,10 0,5 -7,10 -5,1 -11,-4 -3,-4"
+             fill="#60A5FA" opacity="0.6"/>
+  </g>
+
+  <!-- Tiny dot sparkles -->
+  <circle cx="172" cy="148" r="4" fill="#FFAA00" opacity="0.5"/>
+  <circle cx="342" cy="148" r="4" fill="#FFAA00" opacity="0.5"/>
+  <circle cx="92" cy="290" r="3.5" fill="#93C5FD" opacity="0.55"/>
+  <circle cx="422" cy="250" r="3.5" fill="#FCA5A5" opacity="0.5"/>
+  <circle cx="100" cy="380" r="3" fill="#FDE68A" opacity="0.5"/>
+  <circle cx="416" cy="390" r="3" fill="#FDE68A" opacity="0.5"/>
+
+</svg>
