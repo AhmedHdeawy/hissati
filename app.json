@@ -35,7 +35,10 @@
         "RECEIVE_BOOT_COMPLETED",
         "VIBRATE",
         "SCHEDULE_EXACT_ALARM",
-        "android.permission.MODIFY_AUDIO_SETTINGS"
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
       ]
     },
     "plugins": [
@@ -65,8 +68,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "1c1dcece-0367-4113-aba0-bfcee53aa3c7"
+        "projectId": "d586462a-61a9-41f6-8548-e950973cac1a"
       }
-    }
+    },
+    "owner": "ahmedhdeawy"
   }
 }
